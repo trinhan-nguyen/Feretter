@@ -29,6 +29,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    lintOptions {
+        warningsAsErrors true
+        enable "Interoperability"
+        abortOnError false
+    }
 }
 
 dependencies {
