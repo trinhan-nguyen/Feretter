@@ -11,6 +11,7 @@
             android:id="@+id/assets_section"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="@dimen/small_spacing"
@@ -21,7 +22,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/accounts_assets_header" />
+                android:text="@string/accounts_assets_header"
+                android:textColor="?attr/colorOnSurface" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -33,6 +35,7 @@
             android:id="@+id/liabilities_section"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="@dimen/small_spacing"
@@ -43,7 +46,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/accounts_liabilities_header" />
+                android:text="@string/accounts_liabilities_header"
+                android:textColor="?attr/colorOnSurface" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -55,6 +59,7 @@
             android:id="@+id/total_section"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="@dimen/small_spacing"
@@ -65,7 +70,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/accounts_total_header" />
+                android:text="@string/accounts_total_header"
+                android:textColor="?attr/colorOnSurface" />
 
             <TextView
                 android:layout_width="wrap_content"
