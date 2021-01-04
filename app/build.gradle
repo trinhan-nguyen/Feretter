@@ -34,6 +34,10 @@ android {
         enable "Interoperability"
         abortOnError false
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
