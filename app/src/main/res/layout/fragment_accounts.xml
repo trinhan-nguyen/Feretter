@@ -7,6 +7,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <View
+            android:id="@+id/top_divider"
+            style="@style/Divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <LinearLayout
             android:id="@+id/assets_section"
             android:layout_width="0dp"
@@ -17,7 +23,7 @@
             android:padding="@dimen/standard_spacing"
             app:layout_constraintEnd_toStartOf="@id/liabilities_section"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/top_divider">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -41,7 +47,7 @@
             android:padding="@dimen/standard_spacing"
             app:layout_constraintEnd_toStartOf="@id/total_section"
             app:layout_constraintStart_toEndOf="@id/assets_section"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/top_divider">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,7 +71,7 @@
             android:padding="@dimen/standard_spacing"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/liabilities_section"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/top_divider">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,13 +85,19 @@
                 tools:text="@string/test_balance_value" />
         </LinearLayout>
 
+        <View
+            android:id="@+id/summary_divider"
+            style="@style/Divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total_section" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/accounts_list"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/total_section"></androidx.recyclerview.widget.RecyclerView>
+            app:layout_constraintTop_toBottomOf="@id/summary_divider" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
