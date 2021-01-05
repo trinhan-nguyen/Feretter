@@ -17,6 +17,13 @@ class AccountsFragment : Fragment() {
         val binding: FragmentAccountsBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_accounts, container, false
         )
+
+        val adapter = AccountsAdapter()
+        binding.accountsList.adapter = adapter
+
+        // Just to test the RecyclerView for now
+        adapter.data = listOf(AccountItem(AccountItemType.ACCOUNT, "Account name", "$10,000,000.00"))
+
         return binding.root
     }
 }
