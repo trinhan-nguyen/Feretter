@@ -22,7 +22,13 @@ class AccountsFragment : Fragment() {
         binding.accountsList.adapter = adapter
 
         // Just to test the RecyclerView for now
-        adapter.data = listOf(AccountItem(AccountItemType.ACCOUNT, "Account name", "$10,000,000.00"))
+        adapter.data = listOf(
+            AccountItem(AccountItemType.SECTION_HEADER, "Accounts", "$20,000,000.00"),
+            AccountItem(AccountItemType.ACCOUNT, "Account 1", "$10,000,000.00"),
+            AccountItem(AccountItemType.ACCOUNT, "Account 2", "$10,000,000.00"),
+            AccountItem(AccountItemType.SECTION_HEADER, "Savings", "$10,000,000.00"),
+            AccountItem(AccountItemType.ACCOUNT, "Account 3", "$10,000,000.00"),
+        )
 
         return binding.root
     }

@@ -8,30 +8,63 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 
 
-class AccountsAdapter: Adapter<AccountItemViewHolder>() {
+class AccountsAdapter : Adapter<RecyclerView.ViewHolder>() {
     var data = listOf<AccountItem>()
-    set(value) {
-        field = value
-        notifyDataSetChanged()
-    }
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AccountItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater.inflate(R.layout.account_item, parent, false)
-        return AccountItemViewHolder(view)
+
+        return when (viewType) {
+            AccountItemType.SECTION_HEADER.ordinal -> {
+                val view = layoutInflater.inflate(
+                    R.layout.account_section_header_item,
+                    parent,
+                    false
+                )
+                AccountSectionHeaderItemViewHolder(view)
+            }
+            else -> {
+                val view = layoutInflater.inflate(
+                    R.layout.account_item,
+                    parent,
+                    false
+                )
+                AccountItemViewHolder(view)
+            }
+        }
     }
 
-    override fun onBindViewHolder(holder: AccountItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = data[position]
-        holder.nameTextView.text = item.name
-        holder.balanceTextView.text = item.balance
+        when (holder.itemViewType) {
+            AccountItemType.SECTION_HEADER.ordinal -> {
+                val viewHolder = holder as AccountSectionHeaderItemViewHolder
+                viewHolder.headerTextView.text = item.name
+                viewHolder.balanceTextView.text = item.balance
+            }
+            else -> {
+                val viewHolder = holder as AccountItemViewHolder
+                viewHolder.nameTextView.text = item.name
+                viewHolder.balanceTextView.text = item.balance
+            }
+        }
     }
 
     override fun getItemCount(): Int = data.size
 
+    override fun getItemViewType(position: Int): Int = data[position].type.ordinal
 }
 
-class AccountItemViewHolder(view: View): RecyclerView.ViewHolder(view) {
+class AccountSectionHeaderItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    val headerTextView: TextView = view.findViewById(R.id.section_header)
+    val balanceTextView: TextView = view.findViewById(R.id.section_balance)
+}
+
+class AccountItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val nameTextView: TextView = view.findViewById(R.id.account_name)
     val balanceTextView: TextView = view.findViewById(R.id.account_balance)
 }
