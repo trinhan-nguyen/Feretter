@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/top_divider"
+            style="@style/Divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/assets_section"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/standard_spacing"
+            app:layout_constraintEnd_toStartOf="@id/liabilities_section"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_divider">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/accounts_assets_header"
+                android:textColor="?attr/colorOnSurface" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/test_balance_value" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/liabilities_section"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/standard_spacing"
+            app:layout_constraintEnd_toStartOf="@id/total_section"
+            app:layout_constraintStart_toEndOf="@id/assets_section"
+            app:layout_constraintTop_toBottomOf="@id/top_divider">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/accounts_liabilities_header"
+                android:textColor="?attr/colorOnSurface" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/test_balance_value" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/total_section"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/standard_spacing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/liabilities_section"
+            app:layout_constraintTop_toBottomOf="@id/top_divider">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/accounts_total_header"
+                android:textColor="?attr/colorOnSurface" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/test_balance_value" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/summary_divider"
+            style="@style/Divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total_section" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/accounts_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/summary_divider" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

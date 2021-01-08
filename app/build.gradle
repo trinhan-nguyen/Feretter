@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -22,17 +24,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     lintOptions {
         warningsAsErrors true
         enable "Interoperability"
         abortOnError false
+    }
+
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -43,7 +52,13 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
+
+    def nav_version = "2.3.2"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
+    testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
