@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/colorSurface"
-    android:padding="@dimen/standard_spacing">
+    android:background="?attr/colorSurface">
 
     <TextView
         android:id="@+id/account_name"
+        android:layout_margin="@dimen/standard_spacing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="?attr/colorOnSurface"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:text="Saving accounts" />
 
     <TextView
@@ -21,7 +22,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/account_name"
+        android:layout_margin="@dimen/standard_spacing"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:text="@string/test_balance_value" />
+
+    <View
+        style="@style/Divider"
+        android:layout_marginTop="@dimen/standard_spacing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/account_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

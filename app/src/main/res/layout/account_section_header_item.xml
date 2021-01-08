@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="@dimen/standard_spacing"
-    android:paddingTop="@dimen/large_spacing"
-    android:paddingBottom="@dimen/extra_small_spacing">
+    android:paddingTop="@dimen/large_spacing">
 
     <TextView
         android:id="@+id/section_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/standard_spacing"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Section Header" />
@@ -21,7 +20,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/standard_spacing"
         app:layout_constraintTop_toTopOf="@id/section_header"
         tools:text="@string/test_balance_value" />
+
+    <View
+        style="@style/Divider"
+        android:layout_marginTop="@dimen/extra_small_spacing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/section_header" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
