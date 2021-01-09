@@ -8,6 +8,7 @@
     </style>
 
     <style name="Widget.Ferreter.Button.IconOnly" parent="Widget.MaterialComponents.Button">
+        <item name="iconTint">?attr/colorError</item>
         <item name="iconPadding">@dimen/icon_padding</item>
         <item name="android:insetTop">@dimen/icon_padding</item>
         <item name="android:insetBottom">@dimen/icon_padding</item>
