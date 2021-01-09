@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_height</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+    <style name="Widget.Ferreter.Button.IconOnly" parent="Widget.MaterialComponents.Button">
+        <item name="iconPadding">@dimen/icon_padding</item>
+        <item name="android:insetTop">@dimen/icon_padding</item>
+        <item name="android:insetBottom">@dimen/icon_padding</item>
+        <item name="android:paddingLeft">@dimen/standard_spacing</item>
+        <item name="android:paddingRight">@dimen/standard_spacing</item>
+        <item name="android:minWidth">@dimen/icon_size</item>
+        <item name="android:minHeight">@dimen/icon_size</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+</resources>

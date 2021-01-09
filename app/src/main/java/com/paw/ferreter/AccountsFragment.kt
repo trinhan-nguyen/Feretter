@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.paw.ferreter.databinding.FragmentAccountsBinding
 
 class AccountsFragment : Fragment() {
@@ -36,5 +38,15 @@ class AccountsFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.accounts_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.delete_account -> {
+                view?.findNavController()?.navigate(R.id.action_accountsFragment_to_deleteAccountsFragment)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
