@@ -11,9 +11,16 @@
         <action
             android:id="@+id/action_accountsFragment_to_deleteAccountsFragment"
             app:destination="@id/deleteAccountsFragment" />
+        <action
+            android:id="@+id/action_accountsFragment_to_addAccountsFragment"
+            app:destination="@id/addAccountsFragment" />
     </fragment>
     <fragment
         android:id="@+id/deleteAccountsFragment"
         android:name="com.paw.ferreter.DeleteAccountsFragment"
         android:label="DeleteAccountsFragment" />
+    <fragment
+        android:id="@+id/addAccountsFragment"
+        android:name="com.paw.ferreter.AddAccountsFragment"
+        android:label="AddAccountsFragment" />
 </navigation>

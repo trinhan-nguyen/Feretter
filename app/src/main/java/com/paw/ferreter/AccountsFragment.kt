@@ -42,6 +42,10 @@ class AccountsFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.add_account -> {
+                view?.findNavController()?.navigate(R.id.action_accountsFragment_to_addAccountsFragment)
+                true
+            }
             R.id.delete_account -> {
                 view?.findNavController()?.navigate(R.id.action_accountsFragment_to_deleteAccountsFragment)
                 true
