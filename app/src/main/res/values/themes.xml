@@ -19,10 +19,4 @@
         <item name="android:colorBackground">@color/grey_100</item>
         <item name="android:listDivider">@color/alpha_12_black</item>
     </style>
-
-    <style name="Divider">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/divider_height</item>
-        <item name="android:background">?android:attr/listDivider</item>
-    </style>
 </resources>
