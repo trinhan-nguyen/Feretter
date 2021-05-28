@@ -2,6 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="addAccountsViewModel"
+            type="com.paw.ferreter.AddAccountsViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -20,7 +26,8 @@
                 android:id="@+id/account_type_auto_complete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/add_account_type" />
+                android:hint="@string/add_account_type"
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -35,6 +42,7 @@
             app:layout_constraintTop_toBottomOf="@id/account_type">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/account_name_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -52,7 +60,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned|numberDecimal"
+                android:maxLength="18" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,7 +84,7 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/delete_icon"
+            android:id="@+id/add_account"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
